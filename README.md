@@ -1,2 +1,2 @@
 # Messi-Website
-<h1> Each and every thing about Messi</h1>
+<h1> Each And Every Thing About Messi</h1>
