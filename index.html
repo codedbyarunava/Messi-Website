@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.1"/>
+  <title>Lionel Messi – The Goat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark-gradient: linear-gradient(to bottom, #1f1f1f, #121212);
+      --primary: #0077b6;
+      --accent: #fca311;
+      --secondary: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.15);
+      --text-light: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--dark-gradient);
+      color: var(--text-light);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      background-color: #000000;
+    }
+
+    header {
+      background: rgba(0, 7, 7, 0.945);
+      color: var(--text-light);
+      padding: 15px 30px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px var(--shadow);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+
+    .logo span {
+      font-weight: bold;
+      font-size: 1.6rem;
+      color: var(--accent);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 15px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background: var(--accent);
+      color: var(--dark-gradient);
+      border-radius: 5px;
+    }
+
+   .hero {
+      background-size: cover;
+      background-position: center;
+      filter: brightness(75%);
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: background-image 0.5s ease-in-out;
+    }
+
+    @media (max-width: 480px){}.hero h1 {
+      font-size: 2rem;
+      color: rgb(247, 247, 246);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  
+    @media (max-width: 480px){}.hero p {
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+      color: rgb(247, 247, 246);
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+      font-weight: bold;
+    }
+
+    .hero a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      font-size: x-large;
+      font-weight: 600;
+      font-style:initial;
+      color: #fff;
+      background: linear-gradient(to right, #02283b, #0aabcb);
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .hero a:hover {
+      transform: scale(1.05);
+      background: linear-gradient(to right, #fca311, #ffb703);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px var(--shadow);
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 0.1rem;
+      margin-bottom: 20px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin: 40px 10;
+    }
+
+    .stats div {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+      width: 120px;
+      box-shadow: 0 4px 10px var(--shadow);
+    }
+    .stats-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 30px 20px;
+  width: 200px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(255, 255, 255, 0.2);
+}
+.stat-card svg {
+  margin-bottom: 15px;
+}
+.stat-card h3 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+.stat-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ddd;
+}
+.testimonials-grid {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .testimonial-card p {
+      font-size: 1.2rem;
+      color: #ddd;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-card span {
+      font-size: 1rem;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    .professional-button {
+    display: inline-block;
+    padding: 16px 36px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(113, 10, 108, 0.666);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .professional-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(55, 15, 54, 0.2);
+    transform: skewX(-45deg);
+    transition: left 0.3s ease-in-out;
+  }
+
+  .professional-button:hover::before {
+    left: 100%;
+  }
+
+  .professional-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(4, 74, 88, 0.5);
+  }
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--text-light);
+  }
+
+  @media (max-width: 768px) {
+    nav ul {
+      display: none;
+      flex-direction: column;
+      background: var(--dark-gradient);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      padding: 10px;
+    }
+
+    nav ul.active {
+      display: flex;
+    }
+
+    .hamburger {
+      display: block;
+    }
+  }
+.footer {
+      background: var(--dark-gradient);
+      color: var(--text-light);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 10 10px;
+    }
+  </style>
+</head>
+<body>
+ <header>
+    <div class="logo">
+      <img src="my Dp.jpg" alt="Logo" />
+      <span>Arunava's Article</span>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="mailto:arunavabarman9@outlook.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <div>
+      <h1>Each And Everything About: Lionel Messi</h1>
+      <p>Unrivaled. Inspirational. One of the Best Footballer in the History.</p>
+      <a href="#stats" class="professional-button">Explore More</a>
+    </div>
+  </section>
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('nav ul');
+      nav.classList.toggle('active');
+    }
+  </script>
+  <div class="container" id="about">
+    <div class="about-section">
+    <h2>About Lionel Messi</h2>
+    <p>Lionel Messi, an Argentine professional footballer, is widely recognized as one of the greatest players of all time. Born in Rosario, Argentina, in 1987, he has achieved remarkable success, including eight Ballon d'Or awards and a FIFA World Cup title. Messi's career spans multiple prestigious clubs, including FC Barcelona, Paris Saint-Germain, and currently Inter Miami, where he also captains the team.Lionel Messi's journey from the streets of Rosario, Argentina, to becoming a global football icon is nothing short of inspirational. Born with a natural talent for the game, Messi faced early setbacks due to a growth hormone condition that threatened his future in football. But through perseverance, family support, and an unwavering love for the sport, he overcame those challenges and began writing one of the greatest stories in football history. At Barcelona, he transformed from a promising youngster into the heart and soul of a legendary team, mesmerizing fans with his dribbling, balance, and uncanny ability to read the game. Messi's style is unique—he doesn't rely on flashy tricks but rather on simplicity, intelligence, and timing. He can glide past defenders as if they’re not there, thread impossible passes, and make decisive plays when it matters most. Beyond his skills, Messi is admired for his humility and quiet leadership. He lets his football do the talking, earning respect from teammates, rivals, and fans alike. His legacy isn't just about trophies or records, but about the joy he brings to the game and the millions he's inspired along the way.
+      <br><br>
+      <strong>Playing Style:</strong><br>
+      Known for his exceptional ball control, speed, and left-footed passing. A natural goalscorer and a master of threading through defenses. Can unlock a defense with a perfectly weighted pass or dribble through opponents. Messi's impact on the sport, his record-breaking achievements, and his unique playing style have cemented his place as one of the greatest footballers of all time.
+    </p></div>
+  </div>
+  <style>
+  .about-section {
+    background-color: #3a3a3a;
+    padding: 40px;
+    border-radius: 16px;
+    color: #e0e0e0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .about-section:hover {
+    background-color: #4a4a4a57;
+    box-shadow: 0 0 20px rgba(125, 124, 122, 0.277);
+  }
+  
+  .about-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e18c1c;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .about-section h2:hover {
+    color: #fdb50df0; /* Lighter orange on hover */
+    text-shadow: 0 0 8px #a9820d53;
+  }
+  
+  .about-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    transition: color 0.3s ease;
+  }
+  
+  .about-section p:hover {
+    color: #ffffff;
+  }
+</style>
+<div class="container" id="testimonials">
+  <h2 class="section-title">What Fans Say</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <p>"Messi is not just a player; he's an artist on the field!"</p>
+      <span>- Football Enthusiast</span>
+    </div>
+    <div class="testimonial-card">
+      <p>"Watching Messi play is like witnessing magic every time."</p>
+      <span>- Sports Journalist</span>
+    </div>
+    <div class="testimonial-card">
+      <p>"He inspires millions with his humility and unmatched skills."</p>
+      <span>- Fan from Argentina</span>
+    </div>
+  </div>
+</div>
+<div class="container" id="gallery">
+  <h2 class="section-title">Gallery</h2>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/V3ZG4W2QIJALRDI6GTLULMMUNE.JPG&w=1200"
+           alt="Messi vs France World Cup 2022"
+           data-description="The 2022 FIFA World Cup final was the final match of the 2022 FIFA World Cup, the 22nd edition of FIFA's competition for men's national football teams. The match was played at Lusail Stadium in Lusail, Qatar, on 18 December 2022."
+           onclick="openModal(this)" />
+      <p class="caption">Messi vs France World Cup 2022</p>
+    </div>
+    <div class="gallery-item">
+      <img src="https://assets.goal.com/images/v3/bltb340ec865f4be423/b55caef4209f96da514e7e70dcdcc7b77c0b9386.jpg?auto=webp&format=pjpg&width=1920&quality=60"
+           alt="Messi in Copa America 2021"
+           data-description="The 2021 Copa América final was a football match to determine the winners of the 2021 Copa América. The match was the 47th final of the Copa América, a quadrennial tournament contested by the men's national teams of the member associations of CONMEBOL."
+           onclick="openModal(this)" />
+      <p class="caption">Messi in Copa America 2021</p>
+    </div>
+    <div class="gallery-item">
+      <img src="https://assets.goal.com/images/v3/blt35111b8b8b46699a/b4178487b0b223762672dd950ea2af4833f8662e.jpg?auto=webp&format=pjpg&width=1920&quality=60"
+           alt="Messi in La Liga Barcelona"
+           data-description="During his tenure, Barcelona secured ten La Liga titles, seven Copa del Reys, four UEFA Champions Leagues, seven Supercopa de Españas, three UEFA Super Cups, and three FIFA Club World Cups."
+           onclick="openModal(this)" />
+      <p class="caption">Messi in La Liga Barcelona</p>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.ps-aws.com/c?url=https%3A%2F%2Fd2x51gyc4ptf2q.cloudfront.net%2Fcontent%2Fuploads%2F2024%2F07%2F15070649%2FArgentina-win-Copa-America-1320x742.jpg"
+           alt="Messi with the Copa America 2024"
+           data-description="During his tenure, Barcelona secured ten La Liga titles, seven Copa del Reys, four UEFA Champions Leagues, seven Supercopa de Españas, three UEFA Super Cups, and three FIFA Club World Cups."
+           onclick="openModal(this)" />
+      <p class="caption">Messi with the Copa America 2024</p>
+    </div>
+    <div class="gallery-item">
+      <img src="https://cdn.resfu.com/media/img_news/agencia-efe_multimedia_3334887.multimedia.photos.13216035.file.jpg?size=1000x&lossy=1"
+           alt="Celebrating a goal"
+           data-description="Lionel Messi is an Argentine professional footballer who plays as a forward for and captains both Major League Soccer club Inter Miami and the Argentina national team."
+           onclick="openModal(this)" />
+      <p class="caption">Celebrating a goal</p>
+    </div>
+    <div class="gallery-item">
+      <img src="https://editorial.uefa.com/resources/026c-12f5b73e5137-441a60af89c5-1000/format/wide1/juventus_v_fc_barcelona_-_uefa_champions_league_final.jpeg?imwidth=2048"
+           alt="Messi in UEFA Champions League 2015"
+           data-description="On the international stage, Messi made his debut with Argentina's senior national football team in 2005, and would represent the country in five FIFA World Cups, seven Copa Américas, and one Finalissima."
+           onclick="openModal(this)" />
+      <p class="caption">Messi in UEFA Champions League 2015</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="imgModal" class="modal" onclick="closeModal()">
+  <span class="close">&times;</span>
+  <img class="modal-img" id="modalImage" />
+  <div class="modal-caption" id="modalCaption"></div>
+</div>
+
+<style>
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  .gallery-item {
+    text-align: center;
+  }
+
+  .caption {
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(to right, #ffcc00, #ff0055);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 10px;
+  }
+
+  .gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+  }
+
+  /* Modal styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  .modal-img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+  }
+
+  .modal-caption {
+    margin-top: 20px;
+    max-width: 800px;
+    margin: 20px auto 0;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(to right, #ffcc00, #ff0055);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+
+  .modal-description {
+    font-size: 16px;
+    color: #ddd;
+    line-height: 1.6;
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  function openModal(image) {
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImage");
+    const modalCaption = document.getElementById("modalCaption");
+
+    const title = image.alt;
+    const description = image.getAttribute("data-description");
+
+    modal.style.display = "block";
+    modalImg.src = image.src;
+
+    // Separate title and description
+    modalCaption.innerHTML = `
+      <div class="modal-title">${title}</div>
+      <div class="modal-description">${description}</div>
+    `;
+  }
+
+  function closeModal() {
+    document.getElementById("imgModal").style.display = "none";
+  }
+</script>
+<!-- Memorable Matches Section -->
+<div class="container">
+  <h2 class="section-title">Memorable Matches</h2>
+  <div class="stats-container">
+    <div class="stat-box">
+      <div class="icon"> <svg xmlns="http://www.w3.org/2000/svg" fill="#ff5722" viewBox="0 0 24 24" width="40" height="40">
+        <path d="M13.5 2.1s.2 2.1-1.4 4.1c-1.6 2-2.4 3.3-2.4 5.1 0 1.4 1.1 2.5 2.5 2.5 1.3 0 2.3-1.1 2.3-2.3 0-1.2-.4-2.1-.2-3.5.2-1.4 1.2-2.3 1.2-2.3s.5 1.4.5 2.9c0 1.6-.6 3.5-2.6 4.4 0 0 1.5-.3 2.6-1.6 1.1-1.3 1.4-3.4 1.1-4.9-.3-1.6-1-3.1-3.6-5.4zM12 22c4.4 0 8-3.6 8-8 0-1.8-.6-3.5-1.7-4.8-.3 2.4-1.6 4.2-3.5 5.1.6-.7 1.2-1.9 1.2-3.3 0-1.4-.6-2.8-1.2-3.7-.6.7-1.4 1.8-1.6 3.1-.3 1.5.2 2.6.2 3.5 0 2-1.6 3.6-3.6 3.6S8 16.1 8 14c0-1.6.8-3 1.9-4.5C9.2 9.6 8.2 8 7.9 6.3 5.5 8.9 4 11.3 4 14c0 4.4 3.6 8 8 8z"/>
+      </svg></div>
+      <div class="stat-value">2011</div>
+      <div class="stat-label">vs Real Madrid Laliga</div>
+    </div>
+    <div class="stat-box">
+      <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#fca311" viewBox="0 0 24 24" width="40" height="40">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10
+          10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8
+          8 3.59 8 8-3.59 8-8 8zm0-14a6 6 0 100 12 6 6 0 000-12zm0 10a4 4 0 110-8 4 4 0 010 8zm0-6a2 2 0 100 4 2 2 0 000-4z"/>
+      </svg></div>
+      <div class="stat-value">2015</div>
+      <div class="stat-label">vs Bayern Munich UEFA Champions league Semi Final</div>
+    </div>
+    <div class="stat-box">
+      <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#fca311" viewBox="0 0 24 24" width="40" height="40">
+        <path d="M17 3H7v2H3v2c0 3.31 2.69 6 6 6h.29c.45 1.27 1.57 2.24 2.91 2.45V18H9v2h6v-2h-3.2v-2.55c1.34-.21 2.46-1.18 2.91-2.45H15c3.31 0 6-2.69 6-6V5h-4V3zm-10 8c-2.21 0-4-1.79-4-4V7h4v4zm10 0V7h4v.99c0 2.21-1.79 4.01-4 4.01z"/>
+      </svg></div>
+      <div class="stat-value">2022</div>
+      <div class="stat-label"> Fifa WC Final vs France</div>
+    </div>
+    <div class="stat-box">
+      <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#fca311" viewBox="0 0 24 24" width="40" height="40">
+        <path d="M17 3H7v2H3v2c0 3.31 2.69 6 6 6h.29c.45 1.27 1.57 2.24 2.91 2.45V18H9v2h6v-2h-3.2v-2.55c1.34-.21 2.46-1.18 2.91-2.45H15c3.31 0 6-2.69 6-6V5h-4V3zm-10 8c-2.21 0-4-1.79-4-4V7h4v4zm10 0V7h4v.99c0 2.21-1.79 4.01-4 4.01z"/>
+      </svg></div>
+      <div class="stat-value">2021</div>
+      <div class="stat-label">Copa America Final vs Brazil</div>
+    </div>
+    <div class="stat-box">
+      <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#fca311" viewBox="0 0 24 24" width="40" height="40">
+        <path d="M17 3H7v2H3v2c0 3.31 2.69 6 6 6h.29c.45 1.27 1.57 2.24 2.91 2.45V18H9v2h6v-2h-3.2v-2.55c1.34-.21 2.46-1.18 2.91-2.45H15c3.31 0 6-2.69 6-6V5h-4V3zm-10 8c-2.21 0-4-1.79-4-4V7h4v4zm10 0V7h4v.99c0 2.21-1.79 4.01-4 4.01z"/>
+      </svg></div>
+      <div class="stat-value">2015</div>
+      <div class="stat-label">2015 UEFA Champions league Final Vs Juventus</div>
+    </div>
+    <div class="stat-box">
+      <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#fca311" viewBox="0 0 24 24" width="40" height="40">
+        <path d="M17 3H7v2H3v2c0 3.31 2.69 6 6 6h.29c.45 1.27 1.57 2.24 2.91 2.45V18H9v2h6v-2h-3.2v-2.55c1.34-.21 2.46-1.18 2.91-2.45H15c3.31 0 6-2.69 6-6V5h-4V3zm-10 8c-2.21 0-4-1.79-4-4V7h4v4zm10 0V7h4v.99c0 2.21-1.79 4.01-4 4.01z"/>
+      </svg></div>
+      <div class="stat-value">2009</div>
+      <div class="stat-label">2009 UEFA Champions league Final Vs Manchester United</div>
+    </div>
+    <div class="stat-box">
+      <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#fca311" viewBox="0 0 24 24" width="40" height="40">
+        <path d="M17 3H7v2H3v2c0 3.31 2.69 6 6 6h.29c.45 1.27 1.57 2.24 2.91 2.45V18H9v2h6v-2h-3.2v-2.55c1.34-.21 2.46-1.18 2.91-2.45H15c3.31 0 6-2.69 6-6V5h-4V3zm-10 8c-2.21 0-4-1.79-4-4V7h4v4zm10 0V7h4v.99c0 2.21-1.79 4.01-4 4.01z"/>
+      </svg></div>
+      <div class="stat-value">2024</div>
+      <div class="stat-label">2024 UEFA Copa America Final Vs Colombia</div>
+    </div>
+    <div class="stat-box">
+      <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#00bcd4" viewBox="0 0 24 24" width="40" height="40">
+        <path d="M21 11h-3.17l2.59-2.59L19 7l-4 4V7h-2v4l-4-4-1.41 1.41L9.17 11H6l3.29 3.29L7.41 17 9 18.59l4-4V17h2v-4l4 4 1.41-1.41-2.88-2.88L21 11z"/>
+      </svg></div>
+      <div class="stat-value">2009</div>
+      <div class="stat-label">vs Real Madrid Laliga</div>
+    </div>
+    <div class="stat-box">
+      <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="#fca311" viewBox="0 0 24 24" width="40" height="40">
+        <path d="M17 3H7v2H3v2c0 3.31 2.69 6 6 6h.29c.45 1.27 1.57 2.24 2.91 2.45V18H9v2h6v-2h-3.2v-2.55c1.34-.21 2.46-1.18 2.91-2.45H15c3.31 0 6-2.69 6-6V5h-4V3zm-10 8c-2.21 0-4-1.79-4-4V7h4v4zm10 0V7h4v.99c0 2.21-1.79 4.01-4 4.01z"/>
+      </svg></div>
+      <div class="stat-value">2009</div>
+      <div class="stat-label">2009 UEFA Champions league Final Vs Arsenal Fc</div>
+    </div>
+  </div>
+</div>
+<style>
+  .container-box {
+    background-color: #2e2e2e;
+    padding: 40px 0;
+    margin-top: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .section-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffa726;
+    margin-bottom: 30px;
+  }
+  
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .stat-box {
+    background-color: #4b4b4b;
+    border-radius: 20px;
+    padding: 30px;
+    width: 200px;
+    color: #ffa726;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .stat-box:hover {
+    transform: translateY(-10px);
+    box-shadow:
+      0 0 10px #ffa726,
+      0 0 20px #ffa726,
+      0 0 30px #ffa726,
+      0 10px 30px rgba(0, 0, 0, 0.6);
+  }
+  
+  .stat-box .icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+  
+  .stat-box .stat-value {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .stat-box .stat-label {
+    font-size: 16px;
+    color: #e0e0e0;
+  }
+  </style>  
+  <section class="container" id="stats">
+    <h2>Career Stats</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#fca311" viewBox="0 0 24 24" width="40" height="40">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 
+          10-4.48 10-10S17.52 2 12 2zm4.93 6.36l-.95 2.12c-.1.23-.32.38-.57.41l-2.32.3 
+          1.69 1.45c.19.16.27.41.21.65l-.57 2.28 2.06-1.08c.22-.12.49-.12.71 0l2.06 
+          1.08-.57-2.28c-.06-.24.02-.49.21-.65l1.69-1.45-2.32-.3a.749.749 0 01-.57-.41l-.95-2.12z"/>
+        </svg>
+        <h3>800+</h3>
+        <p>Goals</p>
+      </div>
+      <div class="stat-card">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#fca311" viewBox="0 0 24 24" width="40" height="40">
+      <path d="M4 12h16m-6-6 6 6-6 6" stroke="#fca311" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+        <h3>350+</h3>
+        <p>Assists</p>
+      </div>
+      <div class="stat-card">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#fca311" viewBox="0 0 24 24" width="40" height="40">
+          <circle cx="6" cy="12" r="3"/>
+          <circle cx="12" cy="6" r="3"/>
+          <circle cx="18" cy="12" r="3"/>
+        </svg>
+        <h3>59</h3>
+        <p>Hat-Tricks</p>
+      </div>
+      <div class="stat-card">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#fca311" viewBox="0 0 24 24" width="40" height="40">
+          <path d="M12 2l2.92 6.26L22 9.27l-5 4.87L18.18 22 12 18.56
+                   5.82 22 7 14.14l-5-4.87 7.08-1.01L12 2z"/>
+        </svg>
+        <h3>8+</h3>
+        <p>Ballon D'Or</p>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <p>© 2025 Arunava's Website. All rights reserved.</p>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+  </footer>
+  <script>
+    const heroSection = document.querySelector('.hero');
+    const images = [
+      "https://wallpapercave.com/wp/wp13684009.png",
+      "https://4kwallpapers.com/images/walls/thumbs_3t/17376.jpg",
+      "https://phantom-marca.unidadeditorial.es/8471b709112209003f602b28fb9bb257/resize/1980/f/webp/assets/multimedia/imagenes/2024/10/15/17289828239712.jpg"
+    ];
+    let currentImage = 0;
+
+    // Initially set the first image
+    heroSection.style.backgroundImage = `url('${images[currentImage]}')`;
+
+    setInterval(() => {
+      currentImage = (currentImage + 1) % images.length;
+      heroSection.style.backgroundImage = `url('${images[currentImage]}')`;
+    }, 1000); // change every 1 second
+  </script>
+</style>  
+</body>
+</html>
